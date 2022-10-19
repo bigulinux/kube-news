@@ -1,0 +1,20 @@
+apiVersions: apps/v1
+kind: ReplicaSet
+metadata:
+  name: testereplicaset
+spec:
+  replicas: 3 #numeros replicações
+  selector:
+    matchLabels:
+      app: appweb
+   template:
+      metadata:
+       labels:  # name ramdon
+        app: appweb 
+      spec: 
+        containers:
+          name: appweb
+          #image: igorbertelli/web-page:blue
+          image: igorbertelli/web-page:green
+          ports:
+            conteinerPort: 80 
